@@ -1,14 +1,22 @@
 name: Action triggered on push
 run-name: ${{ github.actor }} is learning GitHub Actions
-on: [workflow_dispatch]
+# on: [workflow_dispatch]
+on: [push]
 
 jobs:
-  install_python:
+  checkout_repo:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: sudo apt update
-      - run: sudo apt install python3
-      - run: python3 -c "print('Code executed by python')"
-      - run: echo "some stuff"
+        with:
+          repository: WelderWDE/repo_for_gh_actions
+      - run: ls
+  # install_python:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - run: sudo apt update
+  #     - run: sudo apt install python3
+  #     - run: python3 -c "print('Code executed by python')"
+  #     - run: echo "some stuff"
 
