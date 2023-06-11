@@ -10,7 +10,9 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: WelderWDE/repo_for_gh_actions
-      - run: ls
+      - run: |
+          ls
+          cat README.md
   # install_python:
   #   runs-on: ubuntu-latest
   #   steps:
