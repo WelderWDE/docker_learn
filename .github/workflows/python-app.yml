@@ -26,6 +26,9 @@ jobs:
       - run: |
           pip install poetry
           poetry config http-basic.jfrog ccsautomation FBMucDt36qZ8
+      
+      - run: |
+          poetry install
 
       - name: Cache Poetry virtual environment
         uses: actions/cache@v2
