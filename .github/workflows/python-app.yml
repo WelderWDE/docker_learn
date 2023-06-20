@@ -16,7 +16,7 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - name: Some shit
+      - name: Checkout
         uses: actions/checkout@v3
       - name: install Python
         uses: actions/setup-python@v4
