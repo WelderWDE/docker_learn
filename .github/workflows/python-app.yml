@@ -29,9 +29,18 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('**/poetry.lock') }}
           restore-keys: |
             ${{ runner.os }}-pip-
-      - run: |
+      - name: Cache Poetry
+        id: cache-poetry
+        uses: actions/cache@v2
+        with:
+          path: ~/.poetry
+          key: ${{ runner.os }}-poetry-${{ hashFiles('**/pyproject.toml') }}
+            
+      - name: Install Poetry
+        run: |
           pip install poetry
           poetry config http-basic.jfrog ccsautomation FBMucDt36qZ8
+        if: steps.cache-poetry.outputs.cache-hit != 'true'
       
       - name: Load cached venv
         id: cached-poetry-dependencies
