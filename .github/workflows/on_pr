@@ -1,5 +1,5 @@
 name: Action triggered on pr
-run-name: ${{ github.actor }} is learning GitHub Actions
+run-name: ${{ github.actor }} is testing cache
 # on: [workflow_dispatch]
 on: [pull_request]
 
