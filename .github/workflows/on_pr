@@ -1,0 +1,14 @@
+name: Action triggered on pr
+run-name: ${{ github.actor }} is learning GitHub Actions
+# on: [workflow_dispatch]
+on: [pull_request]
+
+jobs:
+  checkout_repo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - run: poetry install

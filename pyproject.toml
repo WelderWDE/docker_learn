@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "docker-learn"
+version = "0.1.0"
+description = ""
+authors = ["Yevhen Podlyzhnyi <yevhen.podluzhnyi@hpe.com>"]
+readme = "README.md"
+packages = [{include = "docker_learn"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+coverage = "^7.2.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
