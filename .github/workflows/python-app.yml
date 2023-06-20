@@ -28,7 +28,7 @@ jobs:
           poetry config http-basic.jfrog ccsautomation FBMucDt36qZ8
       
       - run: |
-          poetry install
+          poetry install --no-root
 
       - name: Cache Poetry virtual environment
         uses: actions/cache@v2
