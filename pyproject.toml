@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "docker-learn"
+version = "0.1.0"
+description = ""
+authors = ["Yevhen Podlyzhnyi <yevhen.podluzhnyi@hpe.com>"]
+readme = "README.md"
+packages = [{include = "docker_learn"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.31.0"
+boto3 = "^1.26.156"
+commonlib = "2.0.17"
+
+[[tool.poetry.source]]
+name = "jfrog"
+url = "https://aruba.jfrog.io/aruba/api/pypi/pypi-local/simple/"
+priority = "supplemental"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
