@@ -1,12 +1,12 @@
 name: Nginx Manual Dev Build
 
 on:
-    workflow_dispatch:
-        inputs:
-            CONTROLLER_IMAGE:
-            description: 'Image of ingress-nginx controller'
-            required: true
-            default: "quay.io/ccsportal/ingress-nginx:7e61355-controller"
+  workflow_dispatch:
+    inputs:
+      CONTROLLER_IMAGE:
+        description: 'Image of ingress-nginx controller'
+        required: true
+        default: "quay.io/ccsportal/ingress-nginx:7e61355-controller"
 
 jobs:
     Git_Tag:
