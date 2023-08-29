@@ -1,0 +1,21 @@
+name: Nginx Manual Dev Build
+
+on:
+    workflow_dispatch:
+        inputs:
+            CONTROLLER_IMAGE:
+            description: 'Image of ingress-nginx controller'
+            required: true
+            default: "quay.io/ccsportal/ingress-nginx:7e61355-controller"
+
+jobs:
+    Git_Tag:
+        runs-on: ubuntu-latest
+        name: Create and update new git tag
+        steps:
+            - name: Version
+              id: tag_version
+              shell: bash
+              run: |
+                  echo "${{ github.event.inputs.CONTROLLER_IMAGE }}"
+            
